@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monte's Mobile Detailing — Mobile Car Detailing, Charleston SC</title>
+<meta name="description" content="Monte's Mobile Detailing brings full interior and exterior detailing to your driveway across Charleston, SC. 5.0 stars from 269 Google reviews. Call or text 843-973-0080.">
+<meta property="og:title" content="Monte's Mobile Detailing — We bring the shine to your driveway">
+<meta property="og:description" content="Mobile car detailing in Charleston, SC. 5.0 stars from 269 Google reviews. Appointment only — call or text 843-973-0080.">
+<meta property="og:image" content="https://tusharvoid.github.io/montes-detailing-demo/images/hero.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f1012">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f1012;
+    --ink2:#15171a;
+    --panel:#1a1d21;
+    --bone:#f2efe8;
+    --paper:#faf8f3;
+    --gold:#d9a94e;
+    --gold2:#b98a2f;
+    --steel:#9aa2aa;
+    --stone:#6e6960;
+    --line-d:rgba(242,239,232,.12);
+    --line-l:rgba(15,16,18,.12);
+    --f-display:"Anton",sans-serif;
+    --f-label:"Space Grotesk",sans-serif;
+    --f-body:"Inter",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--f-body);background:var(--ink);color:var(--bone);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+
+  /* ---------- header ---------- */
+  .site-head{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;border-bottom:1px solid transparent}
+  .site-head.scrolled{background:rgba(15,16,18,.92);backdrop-filter:blur(10px);border-color:var(--line-d);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+  .head-in{display:flex;align-items:center;gap:28px;padding:16px 0}
+  .brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+  .brand-mark{width:38px;height:38px;border-radius:9px;background:var(--gold);color:var(--ink);font-family:var(--f-display);font-size:21px;display:grid;place-items:center;letter-spacing:.02em}
+  .brand-name{font-family:var(--f-display);font-size:19px;letter-spacing:.045em;line-height:1;text-transform:uppercase}
+  .brand-name small{display:block;font-family:var(--f-label);font-size:9.5px;letter-spacing:.32em;color:var(--gold);margin-top:4px}
+  .head-nav{display:flex;gap:26px;font-family:var(--f-label);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+  .head-nav a{transition:color .25s}
+  .head-nav a:hover{color:var(--bone)}
+  .head-call{font-family:var(--f-label);font-size:12.5px;letter-spacing:.1em;padding:11px 18px;border:1px solid var(--line-d);border-radius:999px;color:var(--bone);transition:background .25s,color .25s,border-color .25s;white-space:nowrap}
+  .head-call:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  @media(max-width:960px){.head-nav{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:150px 0 90px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(900px 520px at 82% 8%,rgba(217,169,78,.13),transparent 62%),
+    radial-gradient(700px 500px at 8% 100%,rgba(154,162,170,.07),transparent 60%);pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .eyebrow{font-family:var(--f-label);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+  .hero h1{font-family:var(--f-display);font-size:clamp(46px,6.6vw,92px);line-height:.98;letter-spacing:.005em;margin:22px 0 24px;text-transform:uppercase}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .lede{color:var(--steel);font-size:17.5px;max-width:52ch}
+  .lede b{color:var(--bone);font-weight:600}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 40px}
+  .btn{font-family:var(--f-label);font-size:13.5px;letter-spacing:.09em;text-transform:uppercase;padding:16px 26px;border-radius:999px;border:1px solid transparent;transition:transform .25s,background .25s,color .25s,border-color .25s;display:inline-flex;align-items:center;gap:10px}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:var(--gold);color:var(--ink);font-weight:700}
+  .btn-gold:hover{background:#e6b558}
+  .btn-ghost{border-color:var(--line-d);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:34px;border-top:1px solid var(--line-d);padding-top:26px}
+  .hero-meta b{display:block;font-family:var(--f-display);font-size:24px;letter-spacing:.03em;color:var(--bone)}
+  .hero-meta b i{color:var(--gold);font-style:normal}
+  .hero-meta span{font-family:var(--f-label);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+  .hero-fig{position:relative}
+  .hero-fig .shot{border-radius:18px;overflow:hidden;border:1px solid var(--line-d);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .hero-fig img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .badge{position:absolute;top:-34px;right:-26px;width:118px;height:118px;animation:spin 22s linear infinite}
+  .badge svg{width:100%;height:100%}
+  .badge text{font-family:var(--f-label);font-size:10.5px;letter-spacing:.22em;fill:var(--bone)}
+  .badge .bcenter{fill:var(--gold);font-family:var(--f-display);font-size:30px}
+  .badge .bsub{fill:var(--stone);font-family:var(--f-label);font-size:7px;letter-spacing:.28em}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .chip{position:absolute;left:18px;bottom:18px;background:rgba(15,16,18,.85);backdrop-filter:blur(6px);border:1px solid var(--line-d);border-radius:999px;padding:9px 16px;font-family:var(--f-label);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+  .chip b{color:var(--gold);font-weight:500}
+  @media(max-width:960px){.hero{padding:120px 0 70px}.hero-grid{grid-template-columns:1fr;gap:64px}.badge{right:6px;top:-30px;width:100px;height:100px}}
+
+  /* ---------- ticker ---------- */
+  .ticker{background:var(--gold);color:var(--ink);overflow:hidden;padding:15px 0;border-top:1px solid rgba(15,16,18,.2)}
+  .ticker-track{display:flex;width:max-content;animation:tick 30s linear infinite}
+  .ticker-track span{font-family:var(--f-display);font-size:17px;letter-spacing:.14em;text-transform:uppercase;padding:0 26px;white-space:nowrap}
+  .ticker-track span:nth-child(even){color:transparent;-webkit-text-stroke:1px rgba(15,16,18,.55)}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  .sec{padding:110px 0}
+  .sec-head{max-width:660px;margin-bottom:56px}
+  .tag{font-family:var(--f-label);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;gap:12px}
+  .tag::before{content:"";width:30px;height:1px;background:var(--gold2)}
+  .sec-head h2{font-family:var(--f-display);font-size:clamp(34px,4.4vw,60px);line-height:1.02;letter-spacing:.01em;text-transform:uppercase;margin:16px 0 18px}
+  .sec-head p{color:var(--stone);font-size:16.5px;max-width:56ch}
+
+  .work{background:var(--bone);color:var(--ink)}
+  .work .sec-head p{color:var(--stone)}
+  .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+  .w-shot{position:relative;border-radius:16px;overflow:hidden;cursor:zoom-in;background:var(--ink2)}
+  .w-shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .w-shot:hover img{transform:scale(1.045)}
+  .w-shot figcaption{position:absolute;left:16px;bottom:14px;background:rgba(15,16,18,.82);backdrop-filter:blur(6px);color:var(--bone);font-family:var(--f-label);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+  .wg-a{grid-column:span 7}.wg-b{grid-column:span 5}
+  .wg-c{grid-column:span 5}.wg-d{grid-column:span 7}
+  .wg-e{grid-column:span 6}.wg-f{grid-column:span 6}
+  .wg-a img,.wg-d img{aspect-ratio:4/3}.wg-b img,.wg-c img,.wg-e img,.wg-f img{aspect-ratio:1/1}
+  @media(max-width:820px){.work-grid .w-shot{grid-column:span 12}}
+
+  .services{background:var(--paper);color:var(--ink);padding-top:0}
+  .services .sec-head p{color:var(--stone)}
+  .svc{border-top:1px solid var(--line-l)}
+  .svc-row{display:grid;grid-template-columns:76px 1fr 1.35fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line-l);align-items:baseline}
+  .svc-num{font-family:var(--f-label);font-size:13px;letter-spacing:.2em;color:var(--gold2)}
+  .svc-row h3{font-family:var(--f-display);font-size:clamp(20px,2.2vw,26px);letter-spacing:.02em;text-transform:uppercase;line-height:1.15}
+  .svc-row p{color:var(--stone);font-size:15.5px}
+  @media(max-width:760px){.svc-row{grid-template-columns:1fr;gap:10px}}
+
+  .interiors{background:var(--ink);position:relative}
+  .interiors::before{content:"";position:absolute;inset:0;background:radial-gradient(760px 480px at 88% 12%,rgba(217,169,78,.09),transparent 60%);pointer-events:none}
+  .int-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+  .int-side{display:grid;grid-template-rows:1fr 1fr;gap:22px}
+  .int-shot{position:relative;border-radius:16px;overflow:hidden;cursor:zoom-in;border:1px solid var(--line-d)}
+  .int-shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .int-shot:hover img{transform:scale(1.04)}
+  .int-shot figcaption{position:absolute;left:16px;bottom:14px;background:rgba(15,16,18,.82);backdrop-filter:blur(6px);font-family:var(--f-label);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:999px;color:var(--bone)}
+  .int-main img{aspect-ratio:4/4.6}.int-side img{aspect-ratio:16/10.4}
+  .mention-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+  .mention{font-family:var(--f-label);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);border:1px solid var(--line-d);border-radius:999px;padding:10px 16px}
+  .mention b{color:var(--gold);font-weight:500}
+  @media(max-width:820px){.int-grid{grid-template-columns:1fr}.int-main img{aspect-ratio:4/3.4}}
+
+  .ba{background:var(--bone);color:var(--ink)}
+  .ba .sec-head p{color:var(--stone)}
+  .ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .ba-shot{position:relative;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--ink2)}
+  .ba-shot img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .ba-shot:hover img{transform:scale(1.045)}
+  .ba-shot figcaption{position:absolute;left:14px;bottom:12px;background:rgba(15,16,18,.82);backdrop-filter:blur(6px);color:var(--bone);font-family:var(--f-label);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:999px}
+  @media(max-width:900px){.ba-grid{grid-template-columns:repeat(2,1fr)}}
+
+  .rates{background:var(--ink);position:relative}
+  .rates::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 460px at 10% 6%,rgba(217,169,78,.1),transparent 58%);pointer-events:none}
+  .rates-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .rate-cell{background:var(--ink2);border:1px solid var(--line-d);border-radius:16px;padding:28px 24px 24px;display:flex;flex-direction:column;gap:4px}
+  .rate-cell span{font-family:var(--f-label);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+  .rate-cell b{font-family:var(--f-display);font-size:46px;color:var(--gold);letter-spacing:.02em;line-height:1.1}
+  .rate-cell i{font-style:normal;font-size:13px;color:var(--stone)}
+  .rate-add{grid-column:span 4;background:linear-gradient(120deg,rgba(217,169,78,.16),rgba(217,169,78,.05));border:1px solid rgba(217,169,78,.35);border-radius:16px;padding:26px 28px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 40px}
+  .rate-add b{font-family:var(--f-display);font-size:30px;letter-spacing:.02em;text-transform:uppercase}
+  .rate-add .price{color:var(--gold);font-family:var(--f-display);font-size:36px}
+  .rate-add p{color:var(--steel);font-size:14.5px;max-width:56ch}
+  .rate-note{margin-top:26px;color:var(--stone);font-size:14px;line-height:1.7}
+  .rate-note a{color:var(--gold);border-bottom:1px solid rgba(217,169,78,.4)}
+  @media(max-width:900px){.rates-grid{grid-template-columns:repeat(2,1fr)}.rate-add{grid-column:span 2}}
+
+  .about{background:var(--ink2);border-top:1px solid var(--line-d)}
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+  .about-copy p{color:var(--steel);font-size:16.5px;margin-bottom:18px;max-width:58ch}
+  .facts{border-top:1px solid var(--line-d)}
+  .fact{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid var(--line-d);font-size:15px}
+  .fact span{color:var(--stone);font-family:var(--f-label);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding-top:3px}
+  .fact b{color:var(--bone);font-weight:500;text-align:right}
+  .quote-strip{margin-top:54px;border-left:3px solid var(--gold);padding:6px 0 6px 28px;max-width:820px}
+  .quote-strip p{font-family:var(--f-display);font-size:clamp(20px,2.6vw,32px);line-height:1.25;letter-spacing:.015em;text-transform:none}
+  .quote-strip cite{display:block;margin-top:14px;font-style:normal;font-family:var(--f-label);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}}
+
+  .reviews{background:var(--paper);color:var(--ink)}
+  .rev-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px;margin-bottom:48px}
+  .rev-score{display:flex;align-items:center;gap:18px}
+  .rev-score b{font-family:var(--f-display);font-size:64px;line-height:1}
+  .rev-score div{font-family:var(--f-label);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+  .stars{display:inline-flex;gap:3px;margin-bottom:6px}
+  .stars svg{width:15px;height:15px;fill:var(--gold2)}
+  .rev-link{font-family:var(--f-label);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border-bottom:1.5px solid var(--gold2);padding-bottom:3px;transition:color .25s}
+  .rev-link:hover{color:var(--gold2)}
+  .rev-feature{background:#fff;border:1px solid var(--line-l);border-radius:18px;padding:40px 44px;margin-bottom:22px;box-shadow:0 18px 50px rgba(15,16,18,.06)}
+  .rev-feature p{font-size:19px;line-height:1.75;color:#2c2a26}
+  .rev-feature p em{font-style:normal;background:linear-gradient(transparent 62%,rgba(217,169,78,.4) 62%)}
+  .rev-who{display:flex;align-items:center;gap:14px;margin-top:24px}
+  .rev-ava{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-family:var(--f-display);font-size:17px}
+  .rev-who b{font-weight:600;font-size:15px}
+  .rev-who span{display:block;font-size:13px;color:var(--stone)}
+  .rev-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .rev-card{background:#fff;border:1px solid var(--line-l);border-radius:16px;padding:30px 30px 26px}
+  .rev-card p{font-size:15.5px;color:#2c2a26;margin:14px 0 20px}
+  @media(max-width:820px){.rev-cards{grid-template-columns:1fr}.rev-feature{padding:30px 26px}.rev-feature p{font-size:17px}}
+
+  .contact{background:var(--ink);position:relative}
+  .contact::before{content:"";position:absolute;inset:0;background:radial-gradient(820px 520px at 78% 20%,rgba(217,169,78,.12),transparent 62%);pointer-events:none}
+  .contact-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+  .big-phone{font-family:var(--f-display);font-size:clamp(38px,5.4vw,72px);letter-spacing:.02em;line-height:1.05;color:var(--bone);display:inline-block;margin:18px 0 8px;transition:color .3s}
+  .big-phone:hover{color:var(--gold)}
+  .contact-copy p{color:var(--steel);font-size:16.5px;max-width:52ch;margin-bottom:20px}
+  .contact-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}
+  .hours{background:var(--ink2);border:1px solid var(--line-d);border-radius:18px;padding:14px 26px 10px}
+  .hours h3{font-family:var(--f-label);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);padding:14px 0 6px}
+  .hrow{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(242,239,232,.07);font-size:14.5px;color:var(--steel)}
+  .hrow:last-child{border-bottom:none}
+  .hrow b{color:var(--bone);font-weight:500}
+  .hrow.today{color:var(--bone)}
+  .hrow.today b{color:var(--gold)}
+  .hrow.today::before{content:"Today";font-family:var(--f-label);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);align-self:center;margin-right:12px}
+  .contact-note{margin-top:22px;font-size:13.5px;color:var(--stone)}
+  .socials{display:flex;gap:26px;margin-top:26px;font-family:var(--f-label);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
+  .socials a{color:var(--steel);border-bottom:1px solid var(--line-d);padding-bottom:3px;transition:color .25s,border-color .25s}
+  .socials a:hover{color:var(--gold);border-color:var(--gold)}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:44px}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);border-top:1px solid var(--line-d);padding:70px 0 36px;overflow:hidden}
+  .foot-word{font-family:var(--f-display);font-size:clamp(64px,13vw,190px);line-height:.9;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.5px rgba(242,239,232,.22);text-transform:uppercase;white-space:nowrap;text-align:center}
+  .foot-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line-d);font-family:var(--f-label);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+  .foot-credit{margin-top:16px;font-size:12.5px;color:var(--stone);line-height:1.7;max-width:78ch}
+  .foot-credit b{color:var(--steel);font-weight:500}
+
+  /* ---------- reveal + lightbox ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(10,11,12,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:5vh 4vw}
+  .lb.open{display:flex}
+  .lb img{max-width:min(1080px,92vw);max-height:78vh;object-fit:contain;border-radius:10px}
+  .lb-cap{margin-top:16px;font-family:var(--f-label);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+  .lb-close{position:absolute;top:22px;right:28px;font-family:var(--f-label);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone);background:none;border:1px solid var(--line-d);border-radius:999px;padding:10px 18px;cursor:pointer;transition:background .25s,color .25s}
+  .lb-close:hover{background:var(--gold);color:var(--ink)}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(242,239,232,.06);border:1px solid var(--line-d);color:var(--bone);width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;display:grid;place-items:center;transition:background .25s,color .25s}
+  .lb-nav:hover{background:var(--gold);color:var(--ink)}
+  .lb-prev{left:22px}.lb-next{right:22px}
+  @media(max-width:760px){.lb-nav{display:none}}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .ticker-track{animation:none}
+    .badge{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .w-shot img,.int-shot img,.ba-shot img{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head" id="top">
+  <div class="wrap head-in">
+    <a class="brand" href="#top" aria-label="Monte's Mobile Detailing — home">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Monte's<small>Mobile Detailing</small></span>
+    </a>
+    <nav class="head-nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#interiors">Interiors</a>
+      <a href="#beforeafter">Before &amp; After</a>
+      <a href="#rates">Rates</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="head-call" href="tel:+18439730080">Call 843-973-0080</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Mobile detailing · Charleston, SC</p>
+        <h1>We bring the <em>shine</em> to your driveway.</h1>
+        <p class="lede">Monte's is a mobile car detailing service. Interior and exterior details, done at your home or office — <b>5.0 stars across 269 Google reviews</b>.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="tel:+18439730080">Call or text 843-973-0080</a>
+          <a class="btn btn-ghost" href="#work">See recent work</a>
+        </div>
+        <ul class="hero-meta">
+          <li><b>5.0<i> ★</i></b><span>269 Google reviews</span></li>
+          <li><b>Mobile</b><span>We come to you</span></li>
+          <li><b>Apt. only</b><span>Appointment required</span></li>
+        </ul>
+      </div>
+      <figure class="hero-fig">
+        <div class="shot">
+          <img src="images/hero.jpg" alt="Toyota 4Runner after a full detail by Monte's Mobile Detailing, photographed in a Charleston driveway" width="1284" height="959">
+        </div>
+        <div class="badge" aria-hidden="true">
+          <svg viewBox="0 0 118 118">
+            <defs><path id="bcirc" d="M59,59 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text><textPath href="#bcirc" textLength="288">5.0 STARS &#183; 269 GOOGLE REVIEWS &#183; MOBILE DETAILING &#183; </textPath></text>
+            <text class="bcenter" x="59" y="61" text-anchor="middle">5.0</text>
+            <text class="bsub" x="59" y="78" text-anchor="middle">GOOGLE</text>
+          </svg>
+        </div>
+        <div class="chip"><b>From Monte's listing</b> — Toyota 4Runner, full detail</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Interior details</span><span>Exterior details</span><span>Gloss enhancement</span><span>Headlight restoration</span><span>Odor removal</span><span>Dog hair &amp; sand</span><span>Vans &amp; fleets</span><span>Gift certificates</span>
+      <span>Interior details</span><span>Exterior details</span><span>Gloss enhancement</span><span>Headlight restoration</span><span>Odor removal</span><span>Dog hair &amp; sand</span><span>Vans &amp; fleets</span><span>Gift certificates</span>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <section class="sec work" id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="tag">01 — Recent work</p>
+        <h2>Real cars, real results.</h2>
+        <p>Every photo on this page comes from Monte's own Google listing — no stock shots, no borrowed work.</p>
+      </div>
+      <div class="work-grid">
+        <figure class="w-shot wg-a reveal"><img src="images/work1.jpg" alt="Audi e-tron after a full detail by Monte's Mobile Detailing" loading="lazy"><figcaption>Audi e-tron · full detail</figcaption></figure>
+        <figure class="w-shot wg-b reveal"><img src="images/work2.jpg" alt="Black full-size build with a Yakima roof basket and bronze wheels detailed by Monte's Mobile Detailing" loading="lazy"><figcaption>Overland build · full detail</figcaption></figure>
+        <figure class="w-shot wg-c reveal"><img src="images/work3.jpg" alt="Full-size SUV after a full detail by Monte's Mobile Detailing" loading="lazy"><figcaption>Full-size SUV · full detail</figcaption></figure>
+        <figure class="w-shot wg-d reveal"><img src="images/work4.jpg" alt="BMW M3 after a gloss enhancement by Monte's Mobile Detailing" loading="lazy"><figcaption>BMW M3 · gloss + wheels</figcaption></figure>
+        <figure class="w-shot wg-e reveal"><img src="images/work5.jpg" alt="Ford Super Duty after a full detail by Monte's Mobile Detailing" loading="lazy"><figcaption>Ford Super Duty · full detail</figcaption></figure>
+        <figure class="w-shot wg-f reveal"><img src="images/work6.jpg" alt="Sprinter touring van detailed by Monte's Mobile Detailing" loading="lazy"><figcaption>Sprinter van · full detail</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="sec services" id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="tag">02 — What Monte does</p>
+        <h2>One car at a time, done properly.</h2>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-row">
+          <span class="svc-num">01</span>
+          <h3>Full interior detail</h3>
+          <p>Seats shampooed, carpets and crevices extracted, plastics and glass wiped down. The part of the job Monte's reviews talk about most.</p>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">02</span>
+          <h3>Full exterior detail</h3>
+          <p>Hand wash and dry, wheels, tires and fender wells cleaned, trim dressed, paint sealed up for gloss.</p>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">03</span>
+          <h3>Gloss enhancement polish</h3>
+          <p>A flat add-on for dull, swirled paint — wakes the shine back up. Ask for the current rate when you book.</p>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">04</span>
+          <h3>Odor, pet hair &amp; sand</h3>
+          <p>Charleston sand and dog hair live deep in the carpets. Monte extracts them — no masking, no shortcuts.</p>
+        </div>
+        <div class="svc-row">
+          <span class="svc-num">05</span>
+          <h3>Headlight restoration</h3>
+          <p>Hazy lenses cleaned up. One five-star review calls the headlight work the most "worth it" part of the bill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERIORS -->
+  <section class="sec interiors" id="interiors">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="tag">03 — Inside out</p>
+        <h2>Interiors are the main event.</h2>
+        <p>Anyone can spray a hose on a fender. Interiors are where a detail is won or lost — and it is where Monte's reputation was built.</p>
+      </div>
+      <div class="int-grid">
+        <figure class="int-shot int-main reveal"><img src="images/int1.jpg" alt="Subaru interior with brown leather seats detailed by Monte's Mobile Detailing" loading="lazy"><figcaption>Subaru · interior detail</figcaption></figure>
+        <div class="int-side">
+          <figure class="int-shot reveal"><img src="images/int2.jpg" alt="Rear leather seats shampooed and conditioned by Monte's Mobile Detailing" loading="lazy"><figcaption>Leather seats · shampooed</figcaption></figure>
+          <figure class="int-shot reveal"><img src="images/int3.jpg" alt="Back seats and carpet vacuumed and extracted by Monte's Mobile Detailing" loading="lazy"><figcaption>Seats &amp; carpet · extracted</figcaption></figure>
+        </div>
+      </div>
+      <div class="mention-row reveal">
+        <span class="mention"><b>18</b> reviews mention interior detailing</span>
+        <span class="mention"><b>7</b> mention dog hair removal</span>
+        <span class="mention"><b>4</b> mention headlight restoration</span>
+        <span class="mention"><b>11</b> mention the convenience of mobile service</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="sec ba" id="beforeafter">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="tag">04 — Before &amp; after</p>
+        <h2>The difference, photographed.</h2>
+        <p>Monte documents the work himself — these side-by-sides come straight from the job.</p>
+      </div>
+      <div class="ba-grid">
+        <figure class="ba-shot reveal"><img src="images/ba1.jpg" alt="Before and after of a BMW interior deep clean by Monte's Mobile Detailing" loading="lazy"><figcaption>BMW interior · deep clean</figcaption></figure>
+        <figure class="ba-shot reveal"><img src="images/ba2.jpg" alt="Before and after of leather seat shampooing by Monte's Mobile Detailing" loading="lazy"><figcaption>Seats · shampoo &amp; extraction</figcaption></figure>
+        <figure class="ba-shot reveal"><img src="images/ba3.jpg" alt="Before and after of wheel arch and trim cleaning by Monte's Mobile Detailing" loading="lazy"><figcaption>Wheel arches · cleaned</figcaption></figure>
+        <figure class="ba-shot reveal"><img src="images/ba4.jpg" alt="Before and after of a center console detail by Monte's Mobile Detailing" loading="lazy"><figcaption>Center console · detailed</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATES -->
+  <section class="sec rates" id="rates">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="tag">05 — Rates</p>
+        <h2>Straight starting rates.</h2>
+        <p>Full interior + exterior details, priced by vehicle size. The number you're quoted is the number you pay.</p>
+      </div>
+      <div class="rates-grid reveal">
+        <div class="rate-cell"><span>Sedan or coupe</span><b>$188</b><i>full detail</i></div>
+        <div class="rate-cell"><span>Mid-size SUV</span><b>$200</b><i>full detail</i></div>
+        <div class="rate-cell"><span>Truck</span><b>$220</b><i>full detail</i></div>
+        <div class="rate-cell"><span>Large / 3-row SUV</span><b>$240</b><i>full detail</i></div>
+        <div class="rate-add">
+          <b>Gloss Enhancement Polish</b>
+          <span class="price">$150</span>
+          <b style="font-size:22px;color:var(--bone)">Gift certificates available</b>
+          <p>A flat add-on to any full detail — ideal for dull or swirled paint. Ask for it when you book.</p>
+        </div>
+      </div>
+      <p class="rate-note reveal">Rates from Monte's most recent published special — they change with the season. Call or text <a href="tel:+18439730080">843-973-0080</a> for a current quote. Appointment required.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec about" id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="tag">06 — About</p>
+        <h2>Monte comes to you.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>Monte's Mobile Detailing is an appointment-only mobile service based in Charleston. Monte brings the water, the power and the products, and works at your home or office while you get on with your day.</p>
+          <p>Sedans, trucks, family SUVs, vans and fleets — if it's in the driveway, it gets detailed. Book ahead: popular slots go early, especially same-week.</p>
+          <div class="quote-strip">
+            <p>"The interior and exterior of my car looked better than when I bought the car 12 years ago."</p>
+            <cite>Lauren Stacy · 5-star Google review</cite>
+          </div>
+        </div>
+        <div class="facts reveal">
+          <div class="fact"><span>Service</span><b>Mobile — we come to you</b></div>
+          <div class="fact"><span>Booking</span><b>Appointment required</b></div>
+          <div class="fact"><span>Ownership</span><b>Identifies as Black-owned</b></div>
+          <div class="fact"><span>Inclusion</span><b>LGBTQ+ friendly</b></div>
+          <div class="fact"><span>Payment</span><b>Card, debit &amp; contactless</b></div>
+          <div class="fact"><span>Hours</span><b>Mon–Sat 7:00 am–7:30 pm<br>Sun 8:30 am–5:30 pm</b></div>
+          <div class="fact"><span>Based in</span><b>Charleston, SC</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec reviews" id="reviews">
+    <div class="wrap">
+      <div class="rev-head reveal">
+        <div class="rev-score">
+          <b>5.0</b>
+          <div>
+            <span class="stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            </span>
+            <br>269 Google reviews
+          </div>
+        </div>
+        <a class="rev-link" href="https://www.google.com/maps?cid=3886655909044806107" target="_blank" rel="noopener">Read them all on Google</a>
+      </div>
+
+      <article class="rev-feature reveal">
+        <span class="stars" aria-label="5 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+        </span>
+        <p>What an amazing experience all around. I reached out to Monte last minute because I was selling my 2009 Honda CRV and the buyer was picking it up way sooner than I thought. On a Monday night I called Monte and left a message. He got back to me immediately and he was very easy to work with. Monte booked me for the very first appt the next day. He came ready to work. He was very meticulous and detail oriented. <em>The interior and exterior of my car looked better than when I bought the car 12 years ago.</em> Monte also restored my headlights which was WORTH IT. What I difference! I would recommend Monte to anybody. He is a very hard worker, very kind, and super reasonable</p>
+        <div class="rev-who">
+          <span class="rev-ava">L</span>
+          <div><b>Lauren Stacy</b><span>5 stars · a year ago</span></div>
+        </div>
+      </article>
+
+      <div class="rev-cards">
+        <article class="rev-card reveal">
+          <span class="stars" aria-label="5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+          </span>
+          <p>Monte did an outstanding job detailing my car! He came to my house the morning after I texted him, was professional, and his prices were very reasonable. The car looks amazing, and I'll definitely be using him again. Highly recommend!</p>
+          <div class="rev-who">
+            <span class="rev-ava">W</span>
+            <div><b>Will Poldiak</b><span>5 stars · 2 months ago</span></div>
+          </div>
+        </article>
+        <article class="rev-card reveal">
+          <span class="stars" aria-label="5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+          </span>
+          <p>The BEST detailing job I've ever experienced. Monte was very responsive, professional, and took great detail and care to ensure my car looked brand new! I will most definitely use his services again.</p>
+          <div class="rev-who">
+            <span class="rev-ava">M</span>
+            <div><b>Maggie Temple</b><span>5 stars · 3 months ago</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="tag">07 — Book</p>
+        <h2>Call or text Monte.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-copy reveal">
+          <a class="big-phone" href="tel:+18439730080">+1 843-973-0080</a>
+          <p>Appointment only — and the good slots go early in the week. Tell Monte your vehicle and your neighborhood, and he'll get right back to you.</p>
+          <div class="contact-ctas">
+            <a class="btn btn-gold" href="tel:+18439730080">Call now</a>
+            <a class="btn btn-ghost" href="sms:+18439730080">Text a photo of your car</a>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/MontesMobileDetailing/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/montesmobiledetailing/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.google.com/maps?cid=3886655909044806107" target="_blank" rel="noopener">Google listing</a>
+          </div>
+          <p class="contact-note">Mobile service based in Charleston, SC — Monte comes to you. Call or text to confirm availability for your address.</p>
+        </div>
+        <div class="hours reveal">
+          <h3>Hours</h3>
+          <div class="hrow" data-day="1"><span>Monday</span><b>7:00 am – 7:30 pm</b></div>
+          <div class="hrow" data-day="2"><span>Tuesday</span><b>7:00 am – 7:30 pm</b></div>
+          <div class="hrow" data-day="3"><span>Wednesday</span><b>7:00 am – 7:30 pm</b></div>
+          <div class="hrow" data-day="4"><span>Thursday</span><b>7:00 am – 7:30 pm</b></div>
+          <div class="hrow" data-day="5"><span>Friday</span><b>7:00 am – 7:30 pm</b></div>
+          <div class="hrow" data-day="6"><span>Saturday</span><b>7:00 am – 7:30 pm</b></div>
+          <div class="hrow" data-day="0"><span>Sunday</span><b>8:30 am – 5:30 pm</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-word" aria-hidden="true">Monte's</div>
+    <div class="foot-meta">
+      <span>Car detailing service · Charleston, SC</span>
+      <span>Mon–Sat 7:00 am–7:30 pm · Sun 8:30 am–5:30 pm</span>
+    </div>
+    <p class="foot-credit">Sample website by <b>Tushar · RudranshCortex</b> — built as a demo for Monte's Mobile Detailing using real photos and details from their Google listing.</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose">Close</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* header scrolled state */
+  var head = document.querySelector('.site-head');
+  var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 30); };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* reveal on scroll */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* hours: highlight today */
+  var today = new Date().getDay();
+  var row = document.querySelector('.hrow[data-day="' + today + '"]');
+  if (row) row.classList.add('today');
+
+  /* lightbox */
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.w-shot, .ba-shot, .int-shot'));
+  var current = -1;
+
+  function captionOf(fig){
+    var cap = fig.querySelector('figcaption');
+    return cap ? cap.textContent : '';
+  }
+  function openAt(i){
+    if (i < 0) i = shots.length - 1;
+    if (i >= shots.length) i = 0;
+    current = i;
+    var fig = shots[i];
+    var img = fig.querySelector('img');
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.getAttribute('alt') || '';
+    lbCap.textContent = captionOf(fig);
+    lb.classList.add('open');
+  }
+  function close(){ lb.classList.remove('open'); lbImg.src = ''; }
+  shots.forEach(function(fig, i){
+    fig.addEventListener('click', function(){ openAt(i); });
+  });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); openAt(current - 1); });
+  document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); openAt(current + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') openAt(current - 1);
+    if (e.key === 'ArrowRight') openAt(current + 1);
+  });
+})();
+</script>
+</body>
+</html>
